@@ -29,8 +29,8 @@
             event = arg1;
         } else {
             event = typeof arg3 !== "undefined" ?
-                new arg1(arg2, arg3) :
-                new arg1(arg2);
+                new arg2(arg1, arg3) :
+                new arg2(arg1);
         }
 
         return this.m_eventTarget.dispatchEvent(event!);
