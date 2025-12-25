@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "moduleResolution": "node",
-    "lib": ["es2024", "DOM"],
+    "lib": ["esnext", "DOM"],
     "strict": true,
     "outDir": "dist",
     "noEmit": false,
