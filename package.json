@@ -1,11 +1,12 @@
 {
   "name": "com.sweaxizone.w3c.extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Global object additions for W3C-compliant runtimes.",
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "typedoc": "./src/index.ts",
