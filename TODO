@@ -1,0 +1,18 @@
+- [x] assert
+- [x] EventRecord
+- [x] SAEventTarget (Short-Augmented Event Target)
+- [x] Enum
+- [x] Math.clamp()
+- [x] BigInt.min(...)
+- [x] BigInt.max(...)
+- [x] trace()
+- [x] etrace()
+- [x] SAByteArray
+
+E4X:
+
+- [ ] XML
+- [ ] XMLList
+- [x] Namespace
+- [x] QName
+- [X] isXMLName()

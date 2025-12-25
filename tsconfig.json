@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "lib": ["es2024", "DOM"],
+    "strict": true,
+    "outDir": "dist",
+    "noEmit": false,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["@types/node"]
+  }
+}
