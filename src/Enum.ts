@@ -2,7 +2,7 @@
     const fn = (key: any) => key;
 
     fn.valueOf = (key: any): any => variants[key];
-    fn.variants = () => Array.from(Object.keys(variants));
+    fn.variants = () => Object.keys(variants);
     fn.from = (arg: any): any => {
         if (typeof arg == "string") {
             const v = typeof (variants as any)[arg];
