@@ -73,6 +73,7 @@ ExampleEnum.plus("variantA", 1) // 1
 - `isXMLName(argument)` (like E4X's `isXMLName()`)
 - `Namespace` (like E4X's `Namespace`)
 - `QName` (like E4X's `QName`)
+- `Iterator.prototype.length()`
 
 ## License
 

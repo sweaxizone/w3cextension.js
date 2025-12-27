@@ -313,3 +313,21 @@ declare global {
         valueOf(): QName;
     }
 }
+
+// Iterator.length()
+(Iterator.prototype as any).length = function() {
+    let n = 0;
+    for (const _ of this) {
+        n++;
+    }
+    return n;
+};
+declare global {
+    interface IteratorObject<T, TReturn, TNext> {
+        /**
+         * Consumes the iterator and returns the number of
+         * iterated entries.
+         */
+        length(): number;
+    }
+}
