@@ -60,7 +60,7 @@ ExampleEnum.valueOf(x) // val: number
 ExampleEnum.plus("variantA", 1) // 1
 ```
 
-## Other globals
+## Other additions
 
 - `assert`
 - `AssertionError`
@@ -74,6 +74,8 @@ ExampleEnum.plus("variantA", 1) // 1
 - `Namespace` (like E4X's `Namespace`)
 - `QName` (like E4X's `QName`)
 - `Iterator.prototype.length()`
+- `Chars`
+- `String.prototype.chars()`
 
 ## License
 

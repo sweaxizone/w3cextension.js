@@ -2,6 +2,7 @@ import "./Enum";
 import "./E4X";
 import "./SAEventTarget";
 import "./SAByteArray";
+import "./Chars";
 import impAssert from "assert";
 
 // assert
@@ -329,5 +330,85 @@ declare global {
          * iterated entries.
          */
         length(): number;
+    }
+}
+
+// Chars
+declare global {
+    /**
+     * `Chars` may be used for iterating characters (as Unicode code points)
+     * from left-to-right in a string with miscellaneous operation methods.
+     */
+    class Chars extends Iterator<number> {
+        /**
+         * Constructs a `Chars` iterator over the specified string,
+         * at the specified UTF-16 `offset`.
+         */
+        public constructor(str: string, offset?: number);
+
+        /**
+         * Indicates if there are remaining code points to read.
+         */
+        public get hasRemaining(): boolean;
+        /**
+         * Indicates if the reader has reached the end of the string.
+         */
+        public get reachedEnd(): boolean;
+
+        public next(): IteratorResult<number>;
+
+        /**
+         * Returns the next code point. If there are no code points
+         * available, returns U+00.
+         */
+        public get nextOrZero(): number;
+
+        /**
+         * Skips a code point. This is equivalent to
+         * calling `next()`.
+         */
+        public skipOneInPlace(): void;
+        /**
+         * Skips the given number of code points.
+         */
+        public skipInPlace(count: number): void;
+
+        /**
+         * Returns the current UTF-16 offset in the string.
+         */
+        public get index(): number;
+
+        /**
+         * Peeks the next code point.
+         */
+        public peek(): null | number;
+        /**
+         * Peeks the next code point. If there are no code points
+         * available, returns U+00.
+         */
+        public peekOrZero(): number;
+
+        /**
+         * Peeks the next code point at the given
+         * zero based code point index.
+         */
+        public at(index: number): null | number;
+        /**
+         * Peeks the next code point at the given zero based code point index.
+         * If there are no code points available, returns U+00.
+         */
+        public atOrZero(index: number): number;
+
+        /**
+         * Peeks a number of code points until the string's end.
+         */
+        public seq(numChars: number): string;
+    }
+}
+
+// String.prototype.chars()
+declare global {
+    interface String {
+        chars(): Chars;
     }
 }
