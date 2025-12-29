@@ -361,7 +361,7 @@ declare global {
          * Returns the next code point. If there are no code points
          * available, returns U+00.
          */
-        public get nextOrZero(): number;
+        public nextOrZero(): number;
 
         /**
          * Skips a code point. This is equivalent to

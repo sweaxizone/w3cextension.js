@@ -47,7 +47,7 @@
         return this._offset;
     }
 
-    public get nextOrZero(): number {
+    public nextOrZero(): number {
         const r = this.next();
         return r.done ? 0 : r.value;
     }
