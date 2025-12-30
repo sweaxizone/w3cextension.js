@@ -89,23 +89,6 @@ declare global {
     };
 }
 
-// Enum
-declare global {
-    /**
-     * Simple enumerations with number-to-string mapping and vice-versa,
-     * as well as the ability to add documentation comments to
-     * variants.
-     */
-    function Enum<K extends string, V extends number | bigint, UserMethods>(variants: Record<K, V>, methods?: UserMethods): EnumType<K, V, UserMethods>;
-
-    type EnumType<K, V, UserMethods> = {
-        (key: K): K;
-        from(arg: string | number | bigint): null | K;
-        valueOf(key: K): V;
-        variants(): K[];
-    } & (UserMethods extends object ? UserMethods : {});
-}
-
 // trace(), etrace()
 (globalThis as any).trace = console.log;
 (globalThis as any).etrace = console.error;

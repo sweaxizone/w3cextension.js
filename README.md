@@ -39,27 +39,6 @@ class MoreSpecializedPlayer extends MediaPlayer {
 
 > Note that event types must implement the `Event` interface.
 
-## Simple enumerations
-
-This is backwards-compatible with `type` unions of string literals.
-
-```ts
-const ExampleEnum = Enum({
-    variantA: 0,
-    variantB: 1,
-}, {
-    plus(e: ExampleEnum, inc: number): number {
-        return ExampleEnum.valueOf(e) + inc;
-    },
-});
-type ExampleEnum = Parameters<typeof ExampleEnum>[0];
-
-const x: ExampleEnum = "variantA";
-const y: string = ExampleEnum("variantB");
-ExampleEnum.valueOf(x) // val: number
-ExampleEnum.plus("variantA", 1) // 1
-```
-
 ## Other additions
 
 - `assert`
