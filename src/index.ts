@@ -1,4 +1,3 @@
-import "./Enum";
 import "./E4X";
 import "./SAEventTarget";
 import "./SAByteArray";
