@@ -1,7 +1,7 @@
 import assert from "assert";
 
 //
-const validEndianSet = ["bigEndian", "littleEndian"];
+const validEndianSet = ["big", "little"];
 
 //
 (globalThis as any).SAByteArray = class SAByteArray {
@@ -10,7 +10,7 @@ const validEndianSet = ["bigEndian", "littleEndian"];
     m_u8array: Uint8Array;
     m_position: number = 0;
     m_length: number = 0;
-    m_endian: string = "bigEndian";
+    m_endian: string = "big";
 
     constructor(initialCapacityArg: any = undefined) {
         let initialCapacity = initialCapacityArg === undefined ? SAByteArray.INITIAL_CAPACITY : initialCapacityArg;
@@ -175,105 +175,105 @@ const validEndianSet = ["bigEndian", "littleEndian"];
 
     readShort() {
         assert(this.m_position + 2 <= this.m_length, 'Insufficient data available to read.');
-        let k = this.m_dataview.getInt16(this.m_position, this.m_endian == "littleEndian");
+        let k = this.m_dataview.getInt16(this.m_position, this.m_endian == "little");
         this.m_position += 2;
         return k;
     }
 
     writeShort(value: number) {
         this.paygrow(2);
-        this.m_dataview.setInt16(this.m_position, value, this.m_endian == "littleEndian");
+        this.m_dataview.setInt16(this.m_position, value, this.m_endian == "little");
         this.m_position += 2;
     }
 
     readUnsignedShort() {
         assert(this.m_position + 2 <= this.m_length, 'Insufficient data available to read.');
-        let k = this.m_dataview.getUint16(this.m_position, this.m_endian == "littleEndian");
+        let k = this.m_dataview.getUint16(this.m_position, this.m_endian == "little");
         this.m_position += 2;
         return k;
     }
 
     writeUnsignedShort(value: number) {
         this.paygrow(2);
-        this.m_dataview.setUint16(this.m_position, value, this.m_endian == "littleEndian");
+        this.m_dataview.setUint16(this.m_position, value, this.m_endian == "little");
         this.m_position += 2;
     }
 
     readInt() {
         assert(this.m_position + 4 <= this.m_length, 'Insufficient data available to read.');
-        let k = this.m_dataview.getInt32(this.m_position, this.m_endian == "littleEndian");
+        let k = this.m_dataview.getInt32(this.m_position, this.m_endian == "little");
         this.m_position += 4;
         return k;
     }
 
     writeInt(value: number) {
         this.paygrow(4);
-        this.m_dataview.setInt32(this.m_position, value, this.m_endian == "littleEndian");
+        this.m_dataview.setInt32(this.m_position, value, this.m_endian == "little");
         this.m_position += 4;
     }
 
     readUnsignedInt() {
         assert(this.m_position + 4 <= this.m_length, 'Insufficient data available to read.');
-        let k = this.m_dataview.getUint32(this.m_position, this.m_endian == "littleEndian");
+        let k = this.m_dataview.getUint32(this.m_position, this.m_endian == "little");
         this.m_position += 4;
         return k;
     }
 
     writeUnsignedInt(value: number) {
         this.paygrow(4);
-        this.m_dataview.setUint32(this.m_position, value, this.m_endian == "littleEndian");
+        this.m_dataview.setUint32(this.m_position, value, this.m_endian == "little");
         this.m_position += 4;
     }
 
     readLong(): bigint {
         assert(this.m_position + 8 <= this.m_length, 'Insufficient data available to read.');
-        let k = this.m_dataview.getBigInt64(this.m_position, this.m_endian == "littleEndian");
+        let k = this.m_dataview.getBigInt64(this.m_position, this.m_endian == "little");
         this.m_position += 8;
         return k;
     }
 
     writeLong(value: bigint) {
         this.paygrow(8);
-        this.m_dataview.setBigInt64(this.m_position, value, this.m_endian == "littleEndian");
+        this.m_dataview.setBigInt64(this.m_position, value, this.m_endian == "little");
         this.m_position += 8;
     }
 
     readUnsignedLong(): bigint {
         assert(this.m_position + 8 <= this.m_length, 'Insufficient data available to read.');
-        let k = this.m_dataview.getBigUint64(this.m_position, this.m_endian == "littleEndian");
+        let k = this.m_dataview.getBigUint64(this.m_position, this.m_endian == "little");
         this.m_position += 8;
         return k;
     }
 
     writeUnsignedLong(value: bigint) {
         this.paygrow(8);
-        this.m_dataview.setBigUint64(this.m_position, value, this.m_endian == "littleEndian");
+        this.m_dataview.setBigUint64(this.m_position, value, this.m_endian == "little");
         this.m_position += 8;
     }
 
     readFloat(): number {
         assert(this.m_position + 4 <= this.m_length, 'Insufficient data available to read.');
-        let k = this.m_dataview.getFloat32(this.m_position, this.m_endian == "littleEndian");
+        let k = this.m_dataview.getFloat32(this.m_position, this.m_endian == "little");
         this.m_position += 4;
         return k;
     }
 
     writeFloat(value: number) {
         this.paygrow(4);
-        this.m_dataview.setFloat32(this.m_position, value, this.m_endian == "littleEndian");
+        this.m_dataview.setFloat32(this.m_position, value, this.m_endian == "little");
         this.m_position += 4;
     }
 
     readDouble(): number {
         assert(this.m_position + 8 <= this.m_length, 'Insufficient data available to read.');
-        let k = this.m_dataview.getFloat64(this.m_position, this.m_endian == "littleEndian");
+        let k = this.m_dataview.getFloat64(this.m_position, this.m_endian == "little");
         this.m_position += 8;
         return k;
     }
 
     writeDouble(value: number) {
         this.paygrow(8);
-        this.m_dataview.setFloat64(this.m_position, value, this.m_endian == "littleEndian");
+        this.m_dataview.setFloat64(this.m_position, value, this.m_endian == "little");
         this.m_position += 8;
     }
 
@@ -312,4 +312,5 @@ const validEndianSet = ["bigEndian", "littleEndian"];
         this.m_dataview = new DataView(arraybuf);
         this.m_u8array = new Uint8Array(arraybuf);
     }
+
 };
