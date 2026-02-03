@@ -141,7 +141,7 @@ declare global {
 
 // SAByteArray
 declare global {
-    type Endian = "littleEndian" | "bigEndian";
+    type Endian = "little" | "big";
 
     class SAByteArray implements ISADataInput, ISADataOutput {
         constructor(initialCapacity?: number);
