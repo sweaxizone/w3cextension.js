@@ -1,7 +1,7 @@
 {
   "name": "com.sweaxizone.w3c.extension",
-  "version": "1.0.6",
-  "description": "Global object additions for W3C-compliant runtimes.",
+  "version": "1.0.7",
+  "description": "Global object additions for semi-W3C runtimes.",
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"
@@ -17,7 +17,7 @@
   "files": [
     "/dist"
   ],
-  "repository": "https://github.com/sweaxizone/W3CExtension.js",
+  "repository": "https://github.com/sweaxizone/w3cextension.js",
   "license": "Apache-2.0",
   "author": "Matheus Dias de Souza <hydroperfox@gmail.com>",
   "keywords": [
