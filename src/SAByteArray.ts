@@ -51,11 +51,11 @@ const validEndianSet = ["big", "little"];
     }
 
     toArrayBuffer() {
-        return this.m_dataview.buffer;
+        return this.m_dataview.buffer.slice(0, this.m_length);
     }
 
     toBuffer() {
-        return Buffer.from(this.m_dataview.buffer.slice(0));
+        return Buffer.from(this.m_dataview.buffer.slice(0, this.m_length));
     }
 
     equals(other: any): boolean {
@@ -299,7 +299,7 @@ const validEndianSet = ["big", "little"];
     }
 
     writeBytes(value: SAByteArray) {
-        const u8arr = value.m_u8array;
+        const u8arr = value.m_u8array.slice(0, value.m_length);
         this.paygrow(u8arr.length);
         this.m_u8array.set(u8arr, this.m_position);;
         this.m_position += u8arr.length;

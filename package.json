@@ -1,6 +1,6 @@
 {
   "name": "com.sweaxizone.w3c.extension",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Global object additions for semi-W3C runtimes.",
   "scripts": {
     "build": "tsc",
